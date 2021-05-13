@@ -1,0 +1,107 @@
+\documentclass{ximera}
+
+\input{../preamble.tex}
+
+\outcome{Probability Problems and Generalizing Ideas}
+
+\title[Break-Ground:]{Birthday Probability and Dice Games}
+
+\begin{document}
+\begin{abstract}
+  Thinking through a well-known probability problem.
+\end{abstract}
+\maketitle
+
+
+The Birthday Problem:  
+We can address this problem as follows:
+
+a)  If one person is in the room, what is the probability that that person does not share a birthday with any other person in the room?
+b)  Suppose an additional person enters the room.  What is the probability that the two people in the room do not share a birthday?
+c)  Suppose the previous two people did not share a birthday, and an additional person enters the room.  What is the probability that among the three people in the room, no pair shares a birthday?
+Moving to a general step…
+d)  Suppose that the n-1 (where n<365) previous people did not share a birthday, and an additional person enters the room.  What is the probability that among the n people in the room, no pair shares a birthday?
+e)  Find the first value for n which makes the probability that no pair shares a birthday less than 50%.  You’ll likely want to use a calculator or computer.  What probability results from this value of n?  [Round to two decimal places.]
+Then for this value of n, the probability that at least one pair shares a birthday is 100% minus the percent probability from part e, which results in a greater than 50% chance.
+e’)  Repeat part e and the conclusion if we want at least a 99% chance that at least one pair shares a birthday.  Give the n value and the corresponding probabilities.
+
+
+%\begin{dialogue}
+%\item[Devyn] Riley, do you remember when we first starting graphing
+%  functions? Like with a ``T-chart?''
+%\end{dialogue}
+
+\begin{problem}
+  How many people must be in a room so that the probability that at least two people have the same birthday is at least 50%?
+  \begin{multipleChoice}
+    \choice{$364$}
+    \choice{$183$}
+    \choice{$75$}
+    \choice[correct]{$23$}
+    \choice{$11$}
+    \choice{$3+5i$}
+  \end{multipleChoice}
+\end{problem}
+
+If you got that right, you've probably seen the problem before. The answer is pretty counter-intuitive. Let's think about some probability ideas that we can use to approach the problem.
+
+First, let's make some reasonable assumptions: We can simplify the problem by ignoring leap years, and assume that people are equally likely to be born on any day of the year.
+
+Let's change the way we look at the problem to make it easier $\ldots$
+
+\begin{problem}
+  In a random group of $n$ people, which of the following is equivalent to $P\[$ at least $2$ people have the same birthday$\]$ ?
+  
+  \begin{multipleChoice}
+    \choice{$1- P\[$ all people have the same birthday$\]$}
+    \choice[correct]{$1- P\[$ no two people have the same birthday$\]$}
+    \choice{$P\[$ no two people have the same birthday$\] - P\[$ all people have the same birthday$\]$}
+    \choice{$\frac{365-n}{365}}
+  \end{multipleChoice}
+\end{problem}
+
+As Gyorgy Polya, was alleged to have said "If you can't solve a problem, there there is an easier problem that you still can't solve; solve that first."  There is some debate about whether he said "Can't solve" or "Can solve". I think "can't" is funnier, so we will go with that. 
+
+In any case, here is an easier (similar) problem.
+
+\begin{problem}
+  If there are only 2 people (Alice and Bert) in the room, what is the probability that they do not share a birthday?
+  \begin{multipleChoice}
+    \choice[correct]{$\frac{364}{365}$}
+    \choice{$\frac{1}{365}$}
+    \choice{$\frac{1}{2}$}  
+  \end{multipleChoice}
+\end{problem}
+
+There are 364 possible (equally likely) days for Bert's birthday that are not the same as Alice's day.
+
+Make it one step harder and see if you can see a pattern emerge....
+
+\begin{problem}
+  If there are exactly 3 people (Alice, Bert and Cindy) in the room, what is the probability that they do not share a birthday?
+  \begin{multipleChoice}
+    \choice[correct]{$\frac{364}{365}\frac{363}{365}$}
+    \choice{$\frac{\pi}{365}$}
+    \choice{$\frac{1}{3}$}
+  \end{multipleChoice}
+\end{problem}
+
+First, Bert has to have a birthday different than Alice. Then assuming that is true, Cindy has 363 days that are free for her birthday.
+ 
+ 
+ Do you see the pattern?
+ Now try 20 people.
+ 
+ \begin{problem}
+  If there are exactly 20 people (Alice, Bert and Cindy) in the room, what is the probability that they do not share a birthday?
+  \begin{multipleChoice}
+    \choice[correct]{$\frac{364}{365}\frac{363}{365}\dot\ldots \dot \frac{365-19}{365}$}
+    \choice{$\frac{\pi}{365}$}
+    \choice{$\frac{1}{3}$}
+  \end{multipleChoice}
+\end{problem}
+
+%\input{../leveledQuestions.tex}
+
+
+\end{document}
